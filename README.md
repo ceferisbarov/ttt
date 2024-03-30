@@ -3,5 +3,5 @@
 After you have created your teams, added players, and started the game, you can run play as follows:
 
 ```sh
-python3 src/play.py --game 4683 --team 1410 --player 3624 --first
+python3 src/play.py --game 4683 --team 1410 --player 3624 --apikey 09837de54294dd255c02 --first
 ```
