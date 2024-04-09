@@ -19,7 +19,7 @@ gameId = args.game
 apikey = args.apikey
 
 
-size, target =get_game_details(gameId, player, apikey)
+size, target = get_game_details(gameId, player, apikey)
 b = Board(size,target)
 
 if args.first:
@@ -28,7 +28,10 @@ if args.first:
 	print("****************************************************")
 	move = minimax(b, 2, True)[1]
 	move = str(move[0]) + "," + str(move[1])
-	print(make_move(gameId, team, player, apikey, move))
+	print(move)
+	response = make_move(gameId, team, player, apikey, move)
+	print(response.status_code)
+	print(response.text)
 
 while True:
 	moves = get_moves(gameId)
@@ -44,6 +47,8 @@ while True:
 		move = str(move[0]) + "," + str(move[1])
 
 		response = make_move(gameId, team, player, apikey, move)
+		print(move)
+		print(response)
 
 	else:
 		continue

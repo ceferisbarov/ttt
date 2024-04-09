@@ -78,5 +78,5 @@ def get_game_details(gameId, userId, apikey):
 	details = json.loads(response.text)
 
 	details = json.loads(details["game"])
-
+	print(details)
 	return int(details["boardsize"]), int(details["target"])
